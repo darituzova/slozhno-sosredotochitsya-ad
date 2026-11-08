@@ -3,9 +3,9 @@
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   color: var(--text-color);
-  font-family: 'IBM Plex mono', monospace;
-  font-size: 18px;
-  line-height: 1.3;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
   background-color: var(--page-background-color);
   background-image: var(--page-background-image);
   background-position: center;
@@ -21,7 +21,7 @@
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  padding: 10px;
+  padding: var(--page-padding);
   block-size: 100vh;
   min-block-size: 668px;
 }
@@ -48,7 +48,7 @@
 }
 
 .header__theme-menu-button:hover {
-  border-color: rgb(255 0 112 / 0.4);
+  border-color: var(--accent-color-hover);
 }
 
 .header__theme-menu-button:focus {
@@ -66,7 +66,7 @@
 
 .header__title {
   color: var(--heading-color);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--heading-font-size);
   font-weight: 700;
   line-height: 0.825;
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -85,8 +85,8 @@
 
 .header__rec {
   position: absolute;
-  inset-block-start: 10px;
-  inset-inline-end: 19px;
+  inset-block-start: var(--page-padding);
+  inset-inline-end: calc(var(--page-padding) + 9px);
   display: var(--rec-display);
   align-items: center;
   gap: 10px;
@@ -114,15 +114,15 @@
 }
 
 .decorated-zone::before {
-  inset-block-start: 10px;
-  inset-inline-end: 10px;
+  inset-block-start: var(--page-padding);
+  inset-inline-end: var(--page-padding);
   border-block-start: 1px solid currentColor;
   border-inline-end: 1px solid currentColor;
 }
 
 .decorated-zone::after {
-  inset-block-end: 10px;
-  inset-inline-start: 10px;
+  inset-block-end: var(--page-padding);
+  inset-inline-start: var(--page-padding);
   border-block-end: 1px solid currentColor;
   border-inline-start: 1px solid currentColor;
 }
@@ -130,13 +130,13 @@
 .content {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 50px;
-  padding: 40px 10px;
+  gap: var(--section-gap);
+  padding: var(--content-padding-block) var(--page-padding);
 }
 
 .content__section {
   display: grid;
-  gap: 20px;
+  gap: var(--card-gap);
   min-inline-size: 0;
 }
 
@@ -151,7 +151,7 @@
 .content__tips-list {
   display: grid;
   align-content: start;
-  gap: 20px;
+  gap: var(--card-gap);
   min-inline-size: 0;
 }
 
@@ -159,7 +159,7 @@
 .content__tip {
   display: grid;
   align-content: start;
-  gap: 10px;
+  gap: var(--paragraph-gap);
   min-inline-size: 0;
 }
 
@@ -204,37 +204,15 @@
 
 @media (width >= 768px) {
   .header {
-    padding: 20px;
     min-block-size: 1024px;
   }
 
   .header__title {
-    margin-inline-start: -20px;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-inline-start: calc(0px - var(--page-padding));
   }
 
   .header__description {
     inline-size: 50%;
-  }
-
-  .header__rec {
-    inset-block-start: 20px;
-    inset-inline-end: 29px;
-  }
-
-  .decorated-zone::before {
-    inset-block-start: 20px;
-    inset-inline-end: 20px;
-  }
-
-  .decorated-zone::after {
-    inset-block-end: 20px;
-    inset-inline-start: 20px;
-  }
-
-  .content {
-    gap: 80px;
-    padding: 60px 20px;
   }
 
   .content__section {
