@@ -182,8 +182,26 @@
   overflow-wrap: break-word;
 }
 
+.gallery {
+  display: grid;
+  gap: var(--gallery-gap);
+  min-inline-size: 0;
+}
+
+.gallery__title {
+  font-size: inherit;
+  font-weight: 700;
+}
+
+.gallery__images {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--gallery-gap);
+}
+
 .gallery__image {
   display: block;
+  inline-size: 100%;
   max-inline-size: 100%;
   block-size: auto;
 }
@@ -221,6 +239,40 @@
 
   .content__section_type_factors .content__articles {
     grid-column: 1 / -1;
+  }
+
+  .gallery__images {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      'sunset sunset ice-cream'
+      'tape books ice-cream'
+      'tape street street';
+  }
+
+  .gallery__image {
+    block-size: 100%;
+    min-block-size: 0;
+    object-fit: cover;
+  }
+
+  .gallery__image_type_sunset {
+    grid-area: sunset;
+  }
+
+  .gallery__image_type_ice-cream {
+    grid-area: ice-cream;
+  }
+
+  .gallery__image_type_tape {
+    grid-area: tape;
+  }
+
+  .gallery__image_type_books {
+    grid-area: books;
+  }
+
+  .gallery__image_type_street {
+    grid-area: street;
   }
 }
 

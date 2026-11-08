@@ -20,6 +20,7 @@
   --section-gap: 50px;
   --card-gap: 20px;
   --paragraph-gap: 10px;
+  --gallery-gap: 10px;
   --rec-display: flex;
 }
 
@@ -29,5 +30,6 @@
     --page-padding: 20px;
     --content-padding-block: 60px;
     --section-gap: 80px;
+    --gallery-gap: 20px;
   }
 }
