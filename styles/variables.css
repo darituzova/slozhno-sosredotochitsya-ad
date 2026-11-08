@@ -6,4 +6,9 @@
 :root {
   --page-background-image: url('../images/cover-image-dark.png');
   --page-background-color: #000028;
+  --accent-color: #ff0070;
+  --text-color: #f1b2ce;
+  --title-color: #000028;
+  --heading-color: #db00ff;
+  --rec-display: flex;
 }
