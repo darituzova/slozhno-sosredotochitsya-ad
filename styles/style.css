@@ -127,6 +127,81 @@
   border-inline-start: 1px solid currentColor;
 }
 
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 50px;
+  padding: 40px 10px;
+}
+
+.content__section {
+  display: grid;
+  gap: 20px;
+  min-inline-size: 0;
+}
+
+.content__section-title {
+  color: var(--accent-color);
+  font-size: inherit;
+  font-weight: 700;
+}
+
+.content__articles,
+.content__tips,
+.content__tips-list {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+  min-inline-size: 0;
+}
+
+.content__article,
+.content__tip {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-inline-size: 0;
+}
+
+.content__article-title {
+  font-size: inherit;
+  font-weight: 700;
+}
+
+.content__article-title_weight_regular {
+  font-weight: 400;
+}
+
+.content__tips-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.content__text {
+  overflow-wrap: break-word;
+}
+
+.gallery__image {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.content__link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.content__link:hover {
+  border-block-end: 1px solid currentColor;
+}
+
+.content__link:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: 0;
+}
+
 @media (width >= 768px) {
   .header {
     padding: 20px;
@@ -156,6 +231,19 @@
     inset-block-end: 20px;
     inset-inline-start: 20px;
   }
+
+  .content {
+    gap: 80px;
+    padding: 60px 20px;
+  }
+
+  .content__section {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  .content__section_type_factors .content__articles {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (width >= 1024px) {
@@ -170,5 +258,18 @@
 
   .header__theme-menu-list {
     grid-auto-flow: column;
+  }
+
+  .content__section {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .content__section_type_reasons .content__articles,
+  .content__section_type_tips .content__tips {
+    grid-column: 2 / -1;
+  }
+
+  .content__section_type_factors .content__articles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
