@@ -171,7 +171,8 @@
   min-inline-size: 0;
 }
 
-.content__article-title {
+.content__article-title,
+.gallery__title {
   font-size: inherit;
   font-weight: 700;
 }
@@ -196,11 +197,6 @@
   min-inline-size: 0;
 }
 
-.gallery__title {
-  font-size: inherit;
-  font-weight: 700;
-}
-
 .gallery__images {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -210,7 +206,6 @@
 .gallery__image {
   display: block;
   inline-size: 100%;
-  max-inline-size: 100%;
   block-size: auto;
 }
 
