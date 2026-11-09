@@ -7,6 +7,7 @@
   --page-background-image: url('../images/cover-image-dark.png');
   --page-background-color: #000028;
   --accent-color: #ff0070;
+  --interface-color: var(--accent-color);
   --accent-color-hover: rgb(255 0 112 / 0.4);
   --text-color: #f1b2ce;
   --title-color: #000028;

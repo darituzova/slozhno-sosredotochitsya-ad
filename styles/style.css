@@ -45,7 +45,7 @@
   padding: 3px 12px;
   border: 1px solid transparent;
   background-color: transparent;
-  color: var(--accent-color);
+  color: var(--interface-color);
   line-height: 1;
   text-transform: lowercase;
   cursor: pointer;
@@ -60,11 +60,11 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end-color: var(--accent-color);
+  border-block-end-color: var(--interface-color);
 }
 
 .header__theme-menu-button_active {
-  border-color: var(--accent-color);
+  border-color: var(--interface-color);
   pointer-events: none;
 }
 
@@ -98,7 +98,7 @@
   display: var(--rec-display);
   align-items: center;
   gap: 10px;
-  color: var(--accent-color);
+  color: var(--interface-color);
   line-height: 25px;
 }
 
@@ -117,7 +117,7 @@
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-  color: var(--accent-color);
+  color: var(--interface-color);
   pointer-events: none;
 }
 
@@ -149,7 +149,7 @@
 }
 
 .content__section-title {
-  color: var(--accent-color);
+  color: var(--interface-color);
   font-size: inherit;
   font-weight: 700;
 }
